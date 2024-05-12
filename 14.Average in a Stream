@@ -1,0 +1,53 @@
+QUESTION:
+    Average in a Stream.
+
+ALGORITHM:
+ STEP-1)streamAvg Method:
+      It takes an integer array arr[] and its size n as input.
+      It iterates through the array, accumulating the sum of elements in temp.
+      For each iteration, it calculates the average up to that point and stores it in the ans vector.
+      Finally, it returns the vector containing the running averages.
+ STEP-2)main Function:
+     It takes input t, the number of test cases.
+     For each test case:
+     It reads the size n of the array.
+     It reads the elements of the array.
+     It creates an instance of the Solution class and calls the streamAvg method to calculate the running averages.
+     It prints the running averages with two decimal places.
+
+CODE:
+class Solution{
+public:	
+	vector<float> streamAvg(int arr[], int n) {
+	    int temp=0;
+	    vector<float>ans;
+	    for(int i=0;i<n;i++)
+	    {
+	        temp+=arr[i];
+	        ans.push_back(static_cast<float>(temp)/(i+1));
+	        
+	    }
+	    return ans;
+	}
+};
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        int arr[n];
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+        Solution ob;
+        auto ans = ob.streamAvg(arr, n);
+        cout << fixed<< setprecision(2);
+        for (auto x : ans) {
+            cout <<x<<" ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
