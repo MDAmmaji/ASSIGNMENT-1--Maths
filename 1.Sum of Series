@@ -1,0 +1,22 @@
+QUESTION:
+      Sum of Series.
+
+ALGORITHM:
+  STEP-1. Start.
+  STEP-2. Variable Initialization: You initialize a variable sum of type long to hold the sum.
+  STEP-3. Calculation: You calculate the sum using the formula for the sum of an arithmetic series
+          (n×(n+1))/2.
+  STEP-4. Return: You return the calculated sum.
+  STEP-5. Stop.
+CODE:
+class Solution {
+    public static long seriesSum(int n) {
+
+        long sum=0;
+        long n1=(long)n;
+        sum=(n1*(n1+1))/2;
+        
+    return sum;
+  }
+}
+        
