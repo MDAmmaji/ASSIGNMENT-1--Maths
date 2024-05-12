@@ -1,0 +1,27 @@
+QUESTION:
+    Number of Divisors.
+
+ALGORITHM:
+STEP-1.The method takes an integer N as input.
+STEP-2.It counts the number of divisors of N that are divisible by 3.
+STEP-3.It iterates through i from 1 up to the square root of N.
+STEP-4.For each i, it checks if i is a divisor of N. If it is:
+STEP-5.If i is divisible by 3, it increments the count.
+STEP-6.It also checks if i is not equal to N / i and if N / i is divisible by 3. This check is to avoid counting the same divisor twice (if i is not the square root of N).
+STEP-7.It returns the count of divisors of N that are divisible by 3.
+
+CODE:
+class Solution {
+    static int count_divisors(int N) {
+        int count = 0;
+        for (int i = 1; i * i <= N; i++) {
+            if (N % i == 0) {
+                if (i % 3 == 0)
+                    count++;
+                if (i != N / i && (N / i) % 3 == 0)
+                    count++;
+            }
+        }
+        return count;
+    }
+}
