@@ -9,6 +9,7 @@ ALGORITHM:
          STEP-2. Calculate nthTerm using the formula: nthTerm = N * (N + 1) / 2.
          STEP-3. Return nthTerm.
 CODE:
+    import java.util.Scanner;
     class Solution {
          static int findNthTerm(int N) {
 
@@ -23,4 +24,4 @@ CODE:
         System.out.println("The " + N + "-th term of the series is: " + findNthTerm(N));
       }
 
-    };
+    }
