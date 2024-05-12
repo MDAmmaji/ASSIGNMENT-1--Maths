@@ -1,0 +1,38 @@
+QUESTION:
+    Dice Problem.
+    
+ALGORITHM:
+  STEP-1) oppositeFaceOfDice Method:
+       It takes an integer N representing the value on one face of the die.
+       It calculates the value on the opposite face of the die using the formula(7−N).
+       It returns the calculated value.
+  STEP-2)main Function:
+      It takes input t, the number of test cases.
+      For each test case:
+      It reads the face value N.
+      It creates an instance of the Solution class and calls the oppositeFaceOfDice method to calculate the opposite face value.
+      It prints the calculated opposite face value.
+
+CODE:
+class Solution
+{
+public:
+    int oppositeFaceOfDice(int N)
+    {
+        return 7-N;
+    }
+};
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        int ans  = ob.oppositeFaceOfDice(N);
+        cout<<ans<<endl;
+    }
+    return 0;
+}
