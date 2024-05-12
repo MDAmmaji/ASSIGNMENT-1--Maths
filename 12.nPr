@@ -1,0 +1,20 @@
+QUESTION:
+        nPr.
+        
+ALGORITHM:
+This declares a function named nPr which takes two integer arguments n and r and returns a long long integer.
+This initializes a variable ans to store the result of the permutation calculation. It is initialized to 1.
+This loop iterates r times, reducing i from n to (n - r + 1).
+In each iteration, it multiplies ans by the current value of i.
+The function returns the final value of ans, which represents the permutation  nPr.
+
+CODE:
+class Solution{
+public:
+    long long nPr(int n, int r){
+        long int ans=1;
+        for(int i=n;i>(n-r);i--)
+            ans*=i;
+        return ans;
+    }
+};
