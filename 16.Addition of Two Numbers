@@ -1,0 +1,30 @@
+QUESTION:
+    Addition of Two Numbers.
+
+ALGORITHM:
+    STEP-1. Read A and B values as input.
+    STEP-2. using bits manipulation
+              Calculate the carry by performing bitwise AND
+              Calculate the sum without considering carry by performing bitwise XOR
+              Left-shift the carry to add to the next bit position
+
+CODE:
+1.
+class Solution{
+    static int addition(int A, int B){
+            return A+B;
+    }
+}
+
+2.
+class Solution{
+    static int addition(int a, int b){
+      
+        while (b != 0) {
+            int carry = a & b;
+            a = a ^ b;         
+            b = carry << 1;   
+        }
+        return a;
+    }
+}
